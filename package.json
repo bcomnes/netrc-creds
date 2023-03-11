@@ -1,6 +1,6 @@
 {
   "name": "netrc-creds",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "private": true,
   "description": "Set up netrc creds in Github Actions",
   "main": "index.js",
