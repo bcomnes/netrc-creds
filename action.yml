@@ -1,5 +1,5 @@
-name: 'Netrc Credentials'
-description: 'Sets up netrc credentials'
+name: 'Netrc Creds'
+description: 'Sets up netrc credentials. Useful for setting up a PAT for git to use in an action.'
 branding:
   icon: lock
   color: yellow
