@@ -1,7 +1,7 @@
 # netrc-creds
 Install Credentials to your Github Actions netrc file.  Useful for authenticating access to additional GitHub resources.
 
-<a href="https://github.com/little-core-labs/netrc-creds"><img alt="GitHub Actions status" src="https://github.com/little-core-labs/netrc-creds/workflows/Tests/badge.svg"></a>
+<a href="https://github.com/bcomnes/netrc-creds"><img alt="GitHub Actions status" src="https://github.com/bcomnes/netrc-creds/workflows/Tests/badge.svg"></a>
 
 ## Usage
 
@@ -44,19 +44,19 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Apply netrc creds with direct input
-      uses: little-core-labs/netrc-creds@master
+      uses: bcomnes/netrc-creds@master
       with:
         machine: some.other.api.com
         login: person
         password: 1234qwer # store this in secrets
     - name: Apply netrc creds with direct input again
-      uses: little-core-labs/netrc-creds@master
+      uses: bcomnes/netrc-creds@master
       with:
         machine: another.api.com
         login: person
         password: 1234qwer # store this in secrets
     - name: Apply netrc creds with a JSON block
-      uses: little-core-labs/netrc-creds@v2.0.0
+      uses: bcomnes/netrc-creds@v2.0.0
       with:
         creds: |
           [

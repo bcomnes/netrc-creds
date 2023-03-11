@@ -8,11 +8,11 @@
     "test": "standard",
     "release": "git push --follow-tags && gh-release -y",
     "version": "npm run build && auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md dist",
-    "build": "rm -rf dist && ncc build index.js -o dist -s"
+    "build": "rm -rf dist && esbuild index.js --bundle --platform=node --target=node16 --sourcemap=external --outdir=dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/little-core-labs/netrc-creds.git"
+    "url": "git+https://github.com/bcomnes/netrc-creds.git"
   },
   "keywords": [
     "github",
@@ -22,18 +22,18 @@
   "author": "Bret Comnes <bcomnes@gmail.com> (https://bret.io/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/little-core-labs/netrc-creds/issues"
+    "url": "https://github.com/bcomnes/netrc-creds/issues"
   },
-  "homepage": "https://github.com/little-core-labs/netrc-creds#readme",
+  "homepage": "https://github.com/bcomnes/netrc-creds#readme",
   "dependencies": {
-    "@actions/core": "1.6.0",
+    "@actions/core": "1.10.0",
     "nanoassert": "^2.0.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.33.0",
+    "esbuild": "^0.17.2",
     "auto-changelog": "^2.2.0",
-    "gh-release": "^6.0.0",
-    "standard": "^16.0.0"
+    "gh-release": "^7.0.2",
+    "standard": "^17.0.0"
   },
   "standard": {
     "ignore": [
