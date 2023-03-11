@@ -27,7 +27,7 @@ jobs:
     - run: npm i
     - uses: bcomnes/npm-bump@v2
       with:
-        git_email: 12core@littlstar.com
+        git_email: bcomnes@gmail.com
         git_username: ${{ github.actor }}
         newversion: ${{ github.event.inputs.newversion }}
         publish_cmd: npm run release # dont publish to a registry. set up something else in a different script
