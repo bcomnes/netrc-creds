@@ -30,7 +30,7 @@
     "nanoassert": "^2.0.0"
   },
   "devDependencies": {
-    "esbuild": "^0.21.0",
+    "esbuild": "^0.22.0",
     "auto-changelog": "^2.2.0",
     "gh-release": "^7.0.2",
     "standard": "^17.0.0"
