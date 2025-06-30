@@ -27,7 +27,7 @@
   "homepage": "https://github.com/bcomnes/netrc-creds#readme",
   "dependencies": {
     "@actions/core": "1.11.1",
-    "nanoassert": "^2.0.0"
+    "nanoassert": "^3.0.1"
   },
   "devDependencies": {
     "esbuild": "^0.25.0",
