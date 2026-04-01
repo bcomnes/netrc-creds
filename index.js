@@ -1,5 +1,5 @@
 import { getInput, setFailed } from '@actions/core'
-import assert from 'nanoassert'
+import assert from 'node:assert'
 import fs from 'fs'
 import { exec } from 'child_process'
 import path from 'path'
