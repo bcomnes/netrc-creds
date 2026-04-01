@@ -39,6 +39,6 @@
     "neostandard": "^0.13.0",
     "npm-run-all2": "^8.0.1",
     "releasearoni": "^0.1.12",
-    "typescript": "~5.9.2"
+    "typescript": "~6.0.2"
   }
 }
