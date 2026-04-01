@@ -44,19 +44,19 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Apply netrc creds with direct input
-      uses: bcomnes/netrc-creds@v3
+      uses: bcomnes/netrc-creds@v4
       with:
         machine: some.other.api.com
         login: person
         password: 1234qwer # store this in secrets
     - name: Apply netrc creds with direct input again
-      uses: bcomnes/netrc-creds@v3
+      uses: bcomnes/netrc-creds@v4
       with:
         machine: another.api.com
         login: person
         password: 1234qwer # store this in secrets
     - name: Apply netrc creds with a JSON block
-      uses: bcomnes/netrc-creds@v3
+      uses: bcomnes/netrc-creds@v4
       with:
         creds: |
           [
@@ -77,7 +77,7 @@ jobs:
 
 ### Can you offer a major version tag/branch alias?  I want automatic updates!
 
-Yes! netrc-creds now offers a v2 and v3 major branch pointer. 
+Yes! netrc-creds now offers a v3 and v4 major branch pointer.
 
 ## License
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
