@@ -1,18 +1,18 @@
-const core = require('@actions/core')
-const assert = require('nanoassert')
-const fs = require('fs')
-const exec = require('child_process').exec
-const path = require('path')
-const os = require('os')
+import { getInput, setFailed } from '@actions/core'
+import assert from 'nanoassert'
+import fs from 'fs'
+import { exec } from 'child_process'
+import path from 'path'
+import os from 'os'
 
-const machine = core.getInput('machine')
+const machine = getInput('machine')
 if (machine) assert(typeof machine === 'string', 'machine input must be a string')
-const login = core.getInput('login')
+const login = getInput('login')
 if (login) assert(typeof login === 'string', 'login input must be a string')
-const password = core.getInput('password')
+const password = getInput('password')
 if (password) assert(typeof password === 'string', 'password input must be a string')
 
-const credsInput = core.getInput('creds')
+const credsInput = getInput('creds')
 
 const creds = credsInput ? JSON.parse(credsInput) : []
 
@@ -69,7 +69,7 @@ exec(`touch ${netrc}`, (error, stdout, stderr) => {
     fs.appendFile(netrc, credsString, err => {
       if (err) {
         console.error(err)
-        return core.setFailed(err.message)
+        return setFailed(err.message)
       }
 
       console.log('wrote credentials to ~/.netrc')
