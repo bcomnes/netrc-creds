@@ -1,6 +1,6 @@
 {
   "name": "netrc-creds",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "private": true,
   "description": "Set up netrc creds in Github Actions",
   "type": "module",

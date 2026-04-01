@@ -1,4 +1,3 @@
-import { createRequire } from 'module'; const require = createRequire(import.meta.url);
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -18589,23 +18588,6 @@ var require_undici = __commonJS({
   }
 });
 
-// node_modules/nanoassert/index.js
-var require_nanoassert = __commonJS({
-  "node_modules/nanoassert/index.js"(exports, module) {
-    var AssertionError = class extends Error {
-      name = "AssertionError";
-      code = "ERR_ASSERTION";
-    };
-    module.exports = function assert2(predicate, message) {
-      if (!predicate) {
-        const err = new AssertionError(message);
-        Error.captureStackTrace?.(err, assert2);
-        throw err;
-      }
-    };
-  }
-});
-
 // node_modules/@actions/core/lib/command.js
 import * as os from "os";
 
@@ -19057,26 +19039,26 @@ function error(message, properties = {}) {
 }
 
 // index.js
-var import_nanoassert = __toESM(require_nanoassert(), 1);
+import assert from "node:assert";
 import fs2 from "fs";
 import { exec } from "child_process";
 import path from "path";
 import os3 from "os";
 var machine = getInput("machine");
-if (machine) (0, import_nanoassert.default)(typeof machine === "string", "machine input must be a string");
+if (machine) assert(typeof machine === "string", "machine input must be a string");
 var login = getInput("login");
-if (login) (0, import_nanoassert.default)(typeof login === "string", "login input must be a string");
+if (login) assert(typeof login === "string", "login input must be a string");
 var password = getInput("password");
-if (password) (0, import_nanoassert.default)(typeof password === "string", "password input must be a string");
+if (password) assert(typeof password === "string", "password input must be a string");
 var credsInput = getInput("creds");
 var creds = credsInput ? JSON.parse(credsInput) : [];
-(0, import_nanoassert.default)(Array.isArray(creds), "creds input must be an array");
-(0, import_nanoassert.default)(creds || machine || login || password, "you must pass a machine,login,password combo, or a creds JSON field.");
+assert(Array.isArray(creds), "creds input must be an array");
+assert(creds || machine || login || password, "you must pass a machine,login,password combo, or a creds JSON field.");
 var credsString = "";
 if (machine || login || password) {
-  (0, import_nanoassert.default)(password != null, "password must be defined");
-  (0, import_nanoassert.default)(login != null, "login must be defined");
-  (0, import_nanoassert.default)(machine != null, "machine must be defined");
+  assert(password != null, "password must be defined");
+  assert(login != null, "login must be defined");
+  assert(machine != null, "machine must be defined");
   let credString = "";
   credString += `machine ${machine}
 `;
@@ -19088,9 +19070,9 @@ if (machine || login || password) {
   credsString += credString;
 }
 creds.forEach((cred) => {
-  (0, import_nanoassert.default)(cred.machine, "cred has a machine field");
-  (0, import_nanoassert.default)(cred.login, "cred has a login field");
-  (0, import_nanoassert.default)(cred.password, "cred has a password field");
+  assert(cred.machine, "cred has a machine field");
+  assert(cred.login, "cred has a login field");
+  assert(cred.password, "cred has a password field");
   let credString = "";
   credString += `machine ${cred.machine}
 `;
