@@ -9,9 +9,9 @@
     "test": "run-s test:*",
     "test:neostandard": "eslint .",
     "test:tsc": "tsc",
+    "release": "releasearoni --no-npm-check --no-build",
     "preversion": "releasearoni preversion",
     "version": "npm run build && releasearoni version --add dist",
-    "prepublishOnly": "releasearoni",
     "build": "rm -rf dist && esbuild index.js --bundle --platform=node --target=node24 --format=esm --sourcemap=external --outdir=dist"
   },
   "repository": {
