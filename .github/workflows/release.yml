@@ -8,7 +8,7 @@ on:
         required: true
 
 env:
-  node_version: 19
+  node_version: 'lts/*'
 
 jobs:
   version_and_release:
@@ -32,4 +32,3 @@ jobs:
         newversion: ${{ github.event.inputs.newversion }}
         publish_cmd: npm run release # dont publish to a registry. set up something else in a different script
         github_token: ${{ secrets.GITHUB_TOKEN }} # built in actions token.  Passed tp gh-release if in use.
-
