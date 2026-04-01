@@ -1,0 +1,14 @@
+{
+  "extends": "@voxpelli/tsconfig/node24.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

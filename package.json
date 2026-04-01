@@ -6,11 +6,13 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "eslint .",
+    "test": "run-s test:*",
+    "test:neostandard": "eslint .",
+    "test:tsc": "tsc",
     "preversion": "releasearoni preversion",
     "version": "npm run build && releasearoni version --add dist",
     "prepublishOnly": "releasearoni",
-    "build": "rm -rf dist && esbuild index.js --bundle --platform=node --target=node24 --format=esm --sourcemap=external --outdir=dist \"--banner:js=import { createRequire } from 'module'; const require = createRequire(import.meta.url);\""
+    "build": "rm -rf dist && esbuild index.js --bundle --platform=node --target=node24 --format=esm --sourcemap=external --outdir=dist"
   },
   "repository": {
     "type": "git",
@@ -31,8 +33,12 @@
     "@actions/core": "3.0.0"
   },
   "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@voxpelli/tsconfig": "^16.0.0",
     "esbuild": "^0.27.0",
     "neostandard": "^0.13.0",
-    "releasearoni": "^0.1.12"
+    "npm-run-all2": "^8.0.1",
+    "releasearoni": "^0.1.12",
+    "typescript": "~5.9.2"
   }
 }
