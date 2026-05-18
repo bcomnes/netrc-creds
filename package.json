@@ -38,7 +38,7 @@
     "esbuild": "^0.28.0",
     "neostandard": "^0.13.0",
     "npm-run-all2": "^8.0.1",
-    "releasearoni": "^0.1.12",
+    "releasearoni": "^0.2.0",
     "typescript": "~6.0.3"
   }
 }
