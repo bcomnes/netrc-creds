@@ -1,8 +1,10 @@
+import { globalIgnores } from 'eslint/config'
 import neostandard, { resolveIgnoresFromGitignore } from 'neostandard'
 
-export default neostandard({
-  ignores: [
+export default [
+  globalIgnores([
     ...resolveIgnoresFromGitignore(),
-    'dist'
-  ]
-})
+    'dist/'
+  ]),
+  ...neostandard()
+]
